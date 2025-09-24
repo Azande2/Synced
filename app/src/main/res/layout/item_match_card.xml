@@ -1,114 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="12dp"
-    app:cardCornerRadius="16dp"
-    app:cardElevation="6dp">
+    android:background="@drawable/rounded_white_card"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:layout_marginBottom="12dp">
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_avatar_foreground"
+        android:background="@drawable/rounded_image_bg"
+        android:layout_marginEnd="16dp"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:gravity="center_vertical">
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
 
-        <!-- Zodiac Icon -->
-        <ImageView
-            android:id="@+id/zodiacIcon"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:src="@drawable/ic_aries"
-            android:contentDescription="Zodiac Sign"
-            android:layout_gravity="center_vertical"
-            android:layout_marginEnd="12dp"/>
-
-        <!-- Text Content -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/nameText"
-                android:text="Alex (Aries)"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@android:color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/bioText"
-                android:text="Loves comedy movies, fitness enthusiast..."
-                android:textSize="14sp"
-                android:textColor="@android:color/darker_gray"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <!-- Chips -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/compatibleCustom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Compatible\nSigns"
-                    android:gravity="center"
-                    android:maxLines="2"
-                    android:textColor="#8032CD32"
-                    android:background="@drawable/chip_like_bg" />
-
-                <TextView
-                    android:id="@+id/interestsCustom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:text="Similar\nInterests"
-                    android:gravity="center"
-                    android:maxLines="2"
-                    android:textColor="#8032CD32"
-                    android:background="@drawable/chip_like_bg" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <!-- Match % + Link -->
-        <LinearLayout
+        <!-- ✅ fixed: added layout_width and layout_height -->
+        <TextView
+            android:id="@+id/txtName"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:text="Name, Age"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"/>
 
-            <TextView
-                android:id="@+id/matchPercent"
-                android:text="  95%\nmatch"
-                android:textStyle="bold"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="18sp"
-                android:layout_marginBottom="4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/viewProfileButton"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="View Profile"
-                android:textColor="@color/blue"
-                android:textSize="12sp"
-                android:backgroundTint="@android:color/transparent"/>
-        </LinearLayout>
+        <!-- ✅ fixed: added layout_width and layout_height -->
+        <TextView
+            android:id="@+id/txtBio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Short bio preview here..."
+            android:textSize="14sp"
+            android:textColor="@color/dark_gray"/>
     </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>
